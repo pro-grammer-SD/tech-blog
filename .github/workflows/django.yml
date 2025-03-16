@@ -33,5 +33,5 @@ jobs:
       run: |
         source venv/bin/activate
         export PYTHONPATH=$PYTHONPATH:$(pwd)/tech-blog/src/main
-        cd tech-blog/src/main
+        cd tech-blog/tech-blog/src/main
         python manage.py test
