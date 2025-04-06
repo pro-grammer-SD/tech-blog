@@ -1,11 +1,23 @@
 {% extends 'home.html' %}
+{% load static %}
 
 {% block title %}
     Contacts
 {% endblock %}
 
 {% block content %}
-    <p>This is Soumalya's Django app's Contact Page</p>
-    <hr>
-    <button type="button" class="btn btn-success" onclick="window.location.href='/'">Home</button>
+    <div class="text-center">
+        <p>Welcome to our Contact Page!</p>
+        <hr>  
+        <div class="card mx-auto" style="width: 18rem;">
+            <img src="{% static 'assets/contacts/github.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">GitHub</h5>
+                <p class="card-text">Our GitHub account.</p>
+                <a href="https://github.com/pro-grammer-SD" class="btn btn-primary">Visit</a>
+            </div>
+        </div>
+        <br>
+        <button type="button" class="btn btn-success" onclick="window.location.href='/'">🏡 Back to Home</button> 
+    </div>
 {% endblock %}

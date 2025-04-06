@@ -28,7 +28,7 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-print(MEDIA_ROOT)
+LOGIN_REDIRECT_URL = '/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     
     # own
     'src.products',
+    'src.accounts',
 ]
 
 MIDDLEWARE = [

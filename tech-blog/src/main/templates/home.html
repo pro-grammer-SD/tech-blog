@@ -1,5 +1,4 @@
 {% load static %}
-<!--% load media %-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +18,7 @@
         <div class="container-fluid d-flex justify-content-center align-items-center">
             <a class="navbar-brand d-flex align-items-center" href="/">
                 <img src="{% static 'assets/logo/tbicon.ico' %}" alt="Logo" width="40" height="30" class="me-2">
-                <span>Tech-BLOG &nbsp; Welcome, <strong>{{ request.user }}</strong></span>
+                <span>Tech-BLOG &nbsp; {% if user.is_authenticated %}Welcome, <strong>{{ request.user }}</strong>{% else %}<strong>You are not authenticated!</strong>{% endif %}</span>
             </a>
         </div>
     </nav>
@@ -28,9 +27,9 @@
     <div class="card">
         <div class="card-body">
             <div class="container text-center mt-4">
-                <h1>Hello World!</h1>
+                <h1>Hi!</h1>
                 {% block content %}
-                    <p>This is Soumalya's Django app's Homepage!</p>
+                    <p>Welcome to our Homepage!</p>
                     <hr>
                     <style>
                         .carousel-item img {
@@ -66,7 +65,7 @@
                             <div class="col-md-4 mb-3">
                                 <div class="card">
                                     <div class="card-header">Item No. {{ forloop.counter }}</div>
-                                    <img src="{{ item.image.url }}" class="card-img-top" alt="Product Image">
+                                    <img src="{{ item.image.url }}" class="card-img-top" alt="product-image">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ item.title }}</h5>
                                         <p class="card-text">{{ item.description }}</p>
@@ -79,7 +78,8 @@
                         {% endfor %}
                     </div>
                     
-                    <a href="/contact" class="btn btn-primary mt-3">Contact Us</a>
+                    <a href="/contact" class="btn btn-primary mt-3">📲 Contact Us</a>
+                    <h6>Made with <img src="{% static 'assets/djl/django.png' %}" alt="Slide 2" height="30" width="50"></h6>
                 {% endblock %}
             </div>
         </div>

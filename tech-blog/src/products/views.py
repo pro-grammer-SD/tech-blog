@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from src.products.models import Product
 
 def home_view(request):
@@ -12,11 +13,3 @@ def home_view(request):
 
 def contact_view(request):
     return render(request, "contact.html")
-
-
-#HttpResponse("""
-        #<h1>Contact Page</h1><br><br>
-        #<h2>This is Soumalya's Django app's Contact Page</h2>
-        #<h4>Contacts:</h4>
-        #<h4><a href="https://github.com/pro-grammer-SD">GitHub</a></h4>
-    #""")
